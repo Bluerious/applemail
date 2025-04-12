@@ -91,7 +91,7 @@ def create_alias():
             EC.element_to_be_clickable((By.XPATH, "//button[contains(@aria-label, 'Ukryj mój adres email')]"))
         )  # This here -> change to your language
         hide_my_email_button.click()
-        time.sleep(2)
+        time.sleep(3)
 
         # We've just entered an iframe on the website. Need to do so in the code too.
         iframe = driver.find_element(By.TAG_NAME, "iframe")
@@ -104,13 +104,13 @@ def create_alias():
                 EC.element_to_be_clickable((By.XPATH, "//button[@title='Dodaj']"))
             )
             plus_button.click()
-            time.sleep(2)
+            time.sleep(3)
 
             # Find text box corresponding to alias
             alias_input = wait.until(
                 EC.presence_of_element_located((By.CLASS_NAME, "form-textbox-input"))
             )
-
+            time.sleep(3)
             # Now we need to write our alias.
             # We could write something random
             # This code uses our defined functions to keep count of the emails
@@ -118,21 +118,21 @@ def create_alias():
             new_email_number = read_and_increment_email_count(file_path)
             print(f"New e-mail number: {new_email_number}")
             alias_input.send_keys(str(new_email_number))
-            time.sleep(1)
+            time.sleep(3)
 
             # Click the button to create the email
             create_email_button = wait.until(
                 EC.presence_of_element_located((By.XPATH, "//button[contains(text(), 'Utwórz adres email')]"))
             )
             create_email_button.click()
-            time.sleep(2)
+            time.sleep(3)
 
             # Click the button to go back
             go_back_button = wait.until(
                 EC.presence_of_element_located((By.XPATH, "//button[contains(text(), 'Wstecz')]"))
             )
             go_back_button.click()
-            time.sleep(2)
+            time.sleep(3)
 
     except Exception as e:
         print("Error:", e)
@@ -150,4 +150,3 @@ def create_alias():
 while True:
     create_alias()
     time.sleep(3600)
-   
