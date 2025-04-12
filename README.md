@@ -5,7 +5,7 @@ You are able to create 5 new hidden emails per hour on the cheapest iCloud versi
 
 ## Features
 
-- **Create multiple email aliases**: Generate several aliases at once (up to 5 emails per hour).
+- **Create multiple email aliases**: Generate several aliases at once (up to 5 emails per hour, max 750 per account).
 - **Automate the process**: The script automatically logs in using saved cookies, creates new aliases, and keeps track of them.
 - **Handle iCloud interface**: The script interacts with the iCloud interface through the use of Selenium WebDriver, clicking buttons, filling out forms, and performing other actions.
 
